@@ -57,8 +57,6 @@ jobs:
           DB_USERNAME: laravel
           DB_PASSWORD: laravel
         run: |
-          php -r "for($i=0;$i<40;$i++){try{new PDO('mysql:host=127.0.0.1;port=3306;dbname=laravel','laravel','laravel'); exit(0);}catch(Exception $e){sleep(1);} } exit(1);"
-          php artisan migrate --force
-
+             php artisan migrate --force
       - name: Run tests
         run: php artisan test
